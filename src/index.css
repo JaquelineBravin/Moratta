@@ -16,6 +16,10 @@ body {
   background: var(--color-bg);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Poppins', sans-serif;
   color: var(--color-secondary);
