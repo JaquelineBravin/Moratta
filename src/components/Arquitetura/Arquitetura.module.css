@@ -1,46 +1,42 @@
 .arquitetura {
   position: relative;
-  width: 1931px;
-  height: 1167px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  column-gap: clamp(24px, 3.4vw, 65px);
+  row-gap: clamp(16px, 2.3vw, 45px);
+  padding: clamp(30px, 2.33vw, 45px) clamp(24px, 3vw, 58px) clamp(60px, 8vw, 160px);
   background: var(--color-bg);
 }
 
 .heading {
-  position: absolute;
-  left: 58px;
-  top: 45px;
-  width: 922px;
-  height: 215px;
-  display: flex;
-  align-items: center;
+  grid-column: 1;
+  grid-row: 1;
   font-family: 'Cinzel', serif;
-  font-size: 80px;
+  font-size: clamp(53px, 4.14vw, 80px);
   line-height: 1.1;
   color: var(--color-accent);
   text-transform: uppercase;
 }
 
 .image {
-  position: absolute;
-  left: 58px;
-  top: 288px;
-  width: 888px;
-  height: 510px;
+  grid-column: 1;
+  grid-row: 2;
+  width: 100%;
+  aspect-ratio: 888 / 510;
   object-fit: cover;
 }
 
 .text {
-  position: absolute;
-  left: 989px;
-  top: 288px;
-  width: 882px;
-  height: 510px;
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap: 24px;
+  gap: clamp(12px, 1.25vw, 24px);
   font-family: 'Baskervville SC', serif;
-  font-size: 32px;
+  font-size: clamp(21px, 1.66vw, 32px);
   line-height: 1.4;
   color: var(--color-secondary);
 }

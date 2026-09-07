@@ -1,34 +1,27 @@
 .footer {
-  position: relative;
-  width: 1931px;
-  height: 129px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(16px, 2vw, 30px);
+  padding: clamp(20px, 2.5vw, 32px) clamp(24px, 3vw, 58px);
   background: var(--color-bg);
   border-top: 1px solid rgba(160, 108, 77, 0.25);
 }
 
 .heading {
-  position: absolute;
-  left: 50%;
-  top: 25px;
-  transform: translateX(-50%);
   font-family: 'Cinzel', serif;
-  font-size: 32px;
+  font-size: clamp(21px, 1.66vw, 32px);
   color: var(--color-accent);
 }
 
 .social {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 77px;
-  height: 25px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 33px;
+  gap: clamp(20px, 3vw, 33px);
 }
 
 .icon {
-  width: 25px;
-  height: 25px;
+  width: clamp(20px, 1.3vw, 25px);
+  height: clamp(20px, 1.3vw, 25px);
 }

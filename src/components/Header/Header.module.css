@@ -1,50 +1,32 @@
 .header {
   position: relative;
-  width: 1931px;
-  height: 127px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(16px, 2vw, 40px);
+  padding: 10px clamp(24px, 6.7vw, 130px);
   background: var(--color-bg);
   box-shadow: 0 4px 4px 0 rgba(160, 108, 77, 0.25);
 }
 
 .logo {
-  position: absolute;
-  left: 130px;
-  top: 20px;
-  width: 268px;
-  height: 256px;
-  z-index: 5;
+  width: clamp(120px, 13.9vw, 268px);
+  height: auto;
+  aspect-ratio: 268 / 256;
+  flex-shrink: 0;
+}
+
+.header nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 3vw, 56px);
 }
 
 .navLink {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 22px;
-  display: flex;
-  align-items: center;
   white-space: nowrap;
   font-family: 'Cinzel', serif;
   font-weight: 400;
-  font-size: 20px;
+  font-size: clamp(13px, 1.04vw, 20px);
   color: var(--color-header);
-}
-
-.navProjetos {
-  left: 955px;
-  width: 191px;
-}
-
-.navFaleComigo {
-  left: 1169px;
-  width: 201px;
-}
-
-.navOrcamento {
-  left: 1430px;
-  width: 165px;
-}
-
-.navParaArquitetos {
-  left: 1649px;
-  width: 212px;
 }

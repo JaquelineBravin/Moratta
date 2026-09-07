@@ -2,24 +2,10 @@ import { getWhatsAppLink } from '../../constants'
 import styles from './Header.module.css'
 
 const NAV_ITEMS = [
-  { label: 'PROJETOS', href: '#projetos', className: styles.navProjetos },
-  {
-    label: 'FALE COMIGO',
-    href: getWhatsAppLink(),
-    external: true,
-    className: styles.navFaleComigo,
-  },
-  {
-    label: 'ORÇAMENTO',
-    href: getWhatsAppLink(),
-    external: true,
-    className: styles.navOrcamento,
-  },
-  {
-    label: 'PARA ARQUITETOS',
-    href: null,
-    className: styles.navParaArquitetos,
-  },
+  { label: 'PROJETOS', href: '#projetos' },
+  { label: 'FALE COMIGO', href: getWhatsAppLink(), external: true },
+  { label: 'ORÇAMENTO', href: getWhatsAppLink(), external: true },
+  { label: 'PARA ARQUITETOS', href: null },
 ]
 
 function Header() {
@@ -32,13 +18,13 @@ function Header() {
             <a
               key={item.label}
               href={item.href}
-              className={`${styles.navLink} ${item.className}`}
+              className={styles.navLink}
               {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
             >
               {item.label}
             </a>
           ) : (
-            <span key={item.label} className={`${styles.navLink} ${item.className}`}>
+            <span key={item.label} className={styles.navLink}>
               {item.label}
             </span>
           ),

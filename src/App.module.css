@@ -1,5 +1,6 @@
 .page {
-  width: 1931px;
+  width: 100%;
+  max-width: 1931px;
   margin: 0 auto;
   position: relative;
   background: var(--color-bg);

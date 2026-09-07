@@ -1,7 +1,7 @@
 .hero {
   position: relative;
-  width: 1931px;
-  height: 1200px;
+  width: 100%;
+  aspect-ratio: 1931 / 1200;
   background: var(--color-bg);
   overflow: hidden;
 }
@@ -16,14 +16,14 @@
 
 .heading {
   position: absolute;
-  left: 137px;
-  top: 245px;
-  width: 659px;
+  left: 7.1%;
+  top: 20.4%;
+  width: 34.1%;
   z-index: 1;
   font-family: 'Cinzel', serif;
   font-weight: 400;
-  font-size: 50px;
-  line-height: 60px;
+  font-size: clamp(33px, 2.59vw, 50px);
+  line-height: 1.2;
   color: var(--color-accent);
   text-transform: uppercase;
 }

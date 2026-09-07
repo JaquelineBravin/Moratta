@@ -1,80 +1,68 @@
 .projetos {
   position: relative;
-  width: 1931px;
-  height: 1193px;
+  width: 100%;
+  padding: clamp(60px, 8.5vw, 166px) clamp(24px, 3vw, 59px) clamp(60px, 7.7vw, 150px);
   background: var(--color-bg);
 }
 
 .heading {
-  position: absolute;
-  left: 59px;
-  top: 224px;
+  margin-bottom: clamp(20px, 2.8vw, 51px);
   font-family: 'Cinzel Decorative', serif;
-  font-size: 48px;
+  font-size: clamp(32px, 2.49vw, 48px);
   color: var(--color-accent);
 }
 
 .grid {
-  position: absolute;
-  left: 59px;
-  top: 318px;
-  display: flex;
-  gap: 43px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(16px, 2.2vw, 43px);
 }
 
 .card {
-  position: relative;
-  width: 422px;
-  height: 369px;
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto auto;
   border: 1px solid var(--color-secondary);
+  overflow: hidden;
   background: var(--color-bg);
 }
 
 .cardImage {
-  position: absolute;
-  inset: 0;
+  grid-column: 1 / -1;
+  grid-row: 1;
   width: 100%;
-  height: 284px;
+  aspect-ratio: 422 / 284;
   object-fit: cover;
 }
 
 .room {
-  position: absolute;
-  left: 11px;
-  top: 294px;
-  height: 23px;
-  display: flex;
-  align-items: center;
+  grid-column: 1;
+  grid-row: 2;
+  padding: clamp(8px, 1.1vw, 16px) 0 0 clamp(6px, 0.8vw, 11px);
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  font-size: 15px;
+  font-size: clamp(12px, 0.78vw, 15px);
   color: var(--color-secondary);
 }
 
 .city {
-  position: absolute;
-  left: 11px;
-  top: 332px;
-  height: 23px;
-  display: flex;
-  align-items: center;
+  grid-column: 1;
+  grid-row: 3;
+  padding: 2px 0 clamp(8px, 1.1vw, 16px) clamp(6px, 0.8vw, 11px);
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  font-size: 15px;
+  font-size: clamp(12px, 0.78vw, 15px);
   color: var(--color-secondary);
 }
 
 .category {
-  position: absolute;
-  left: 315px;
-  top: 293px;
-  width: 98px;
-  height: 25px;
-  display: flex;
-  align-items: center;
+  grid-column: 2;
+  grid-row: 2;
+  align-self: start;
+  padding: clamp(8px, 1.1vw, 16px) clamp(6px, 0.8vw, 11px) 0 0;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  font-size: 15px;
+  font-size: clamp(12px, 0.78vw, 15px);
   color: var(--color-secondary);
+  white-space: nowrap;
 }

@@ -1,58 +1,50 @@
 .prazer {
   position: relative;
-  width: 1931px;
-  height: 1073px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  align-items: center;
+  column-gap: clamp(24px, 3vw, 60px);
+  row-gap: clamp(8px, 1.5vw, 24px);
+  padding: clamp(60px, 8.5vw, 164px) clamp(24px, 3vw, 58px);
   background: var(--color-bg);
 }
 
-.photo {
-  position: absolute;
-  left: 942px;
-  top: 221px;
-  width: 931px;
-  height: 785px;
-  object-fit: cover;
-}
-
 .greeting {
-  position: absolute;
-  left: 62px;
-  top: 164px;
-  width: 421px;
-  height: 83px;
-  display: flex;
-  align-items: center;
+  grid-column: 1;
+  grid-row: 1;
   font-family: 'Baskervville', serif;
-  font-size: 64px;
+  font-size: clamp(42px, 3.31vw, 64px);
   color: var(--color-accent);
 }
 
 .name {
-  position: absolute;
-  left: 58px;
-  top: 258px;
-  width: 884px;
-  height: 183px;
-  display: flex;
-  align-items: center;
+  grid-column: 1;
+  grid-row: 2;
   font-family: 'Baskervville', serif;
   font-style: italic;
-  font-size: 128px;
+  font-size: clamp(85px, 6.63vw, 128px);
+  line-height: 1.05;
   color: var(--color-accent);
 }
 
 .bio {
-  position: absolute;
-  left: 58px;
-  top: 533px;
-  width: 648px;
-  height: 370px;
-  display: flex;
-  align-items: center;
+  grid-column: 1;
+  grid-row: 3;
+  margin-top: clamp(16px, 2vw, 32px);
   border-left: 3px solid var(--color-secondary);
-  padding-left: 52px;
+  padding-left: clamp(24px, 2.7vw, 52px);
   font-family: 'Baskervville', serif;
-  font-size: 64px;
+  font-size: clamp(42px, 3.31vw, 64px);
   line-height: 1.15;
   color: var(--color-secondary);
+}
+
+.photo {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+  align-self: center;
+  width: 100%;
+  aspect-ratio: 931 / 785;
+  object-fit: cover;
 }
