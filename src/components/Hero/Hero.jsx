@@ -1,14 +1,16 @@
-import styles from './Hero.module.css'
+import styles from './Hero.module.css';
+import parteB from '../../img/parte_B.png';
 
 function Hero() {
   return (
     <section className={styles.hero}>
-      <img src="/img/parte_B.png" alt="" className={styles.image} />
+      <img src={parteB} alt="" className={styles.image} />
       <h1 className={styles.heading}>
-        Arquitetura e Design de Interiores, criando espaços que abraçam, acolhem e encantam.
+        Arquitetura e Design de Interiores, criando espaços que abraçam, acolhem
+        e encantam.
       </h1>
     </section>
-  )
+  );
 }
 
-export default Hero
+export default Hero;
