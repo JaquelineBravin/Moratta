@@ -1,0 +1,38 @@
+:root {
+  --color-header: #774545;
+  --color-bg: #f3eee9;
+  --color-accent: #a06c4d;
+  --color-secondary: #81766d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-bg);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-secondary);
+}
+
+img {
+  display: block;
+  max-width: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p,
+h1,
+h2 {
+  margin: 0;
+}

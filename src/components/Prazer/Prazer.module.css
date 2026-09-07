@@ -1,0 +1,58 @@
+.prazer {
+  position: relative;
+  width: 1931px;
+  height: 1073px;
+  background: var(--color-bg);
+}
+
+.photo {
+  position: absolute;
+  left: 942px;
+  top: 221px;
+  width: 931px;
+  height: 785px;
+  object-fit: cover;
+}
+
+.greeting {
+  position: absolute;
+  left: 62px;
+  top: 164px;
+  width: 421px;
+  height: 83px;
+  display: flex;
+  align-items: center;
+  font-family: 'Baskervville', serif;
+  font-size: 64px;
+  color: var(--color-accent);
+}
+
+.name {
+  position: absolute;
+  left: 58px;
+  top: 258px;
+  width: 884px;
+  height: 183px;
+  display: flex;
+  align-items: center;
+  font-family: 'Baskervville', serif;
+  font-style: italic;
+  font-size: 128px;
+  color: var(--color-accent);
+}
+
+.bio {
+  position: absolute;
+  left: 58px;
+  top: 533px;
+  width: 648px;
+  height: 370px;
+  display: flex;
+  align-items: center;
+  border-left: 3px solid var(--color-secondary);
+  padding-left: 52px;
+  font-family: 'Baskervville', serif;
+  font-size: 64px;
+  line-height: 1.15;
+  color: var(--color-secondary);
+}

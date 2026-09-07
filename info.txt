@@ -1,0 +1,79 @@
+# Plano — Site Moratta (v1, front-end)
+
+## Contexto
+
+A Leticia Martins (arquiteta) precisa de um site institucional, somente front-end, para apresentar seu trabalho e captar contato via WhatsApp. O design já está pronto no Figma (frame "Website", arquivo Moratta) e as imagens finais já estão na pasta local img/. Não haverá cadastro, backend, nem CMS — é uma página única (one-pager) com seções fixas. A hospedagem definitiva (Hostinger) fica para a v2; agora o objetivo é ter o código completo e versionado no repositório GitHub https://github.com/JaquelineBravin/Moratta.git (hoje vazio).
+
+Decisões já confirmadas com a cliente:
+- Stack: React + Vite (SPA estática, sem backend)
+- Escopo: somente layout desktop na v1 (sem responsivo — Figma só tem o frame desktop)
+- Fontes: Google Fonts via CDN (Cinzel, Cinzel Decorative, Baskervville, Baskervville SC, Poppins)
+- Cores: #774545, #F3EEE9, #A06C4D, #81766D
+- Botão de nav "PARA ARQUITETOS" fica visível mas inerte (sem link) — ela mesma vai criar essa parte depois
+- WhatsApp: +55 69 99219-9752, mesma mensagem pré-preenchida para os botões "FALE COMIGO", "ORÇAMENTO" e o ícone do rodapé
+- Instagram: https://www.instagram.com/arquitetura.moratta
+- E-mail: moratta.arquiteturalm@gmail.com
+- Conteúdo dos 4 cards de "Projetos" é placeholder do template do Figma — usar exatamente o que está lá (ela troca depois pelos projetos reais)
+- leticiaProfile.png está sem uso por enquanto (não entra no site)
+- paleta-de-cores.jpg e Frame 1.png são só referência de design, não vão para o site
+
+Mapeamento imagem → seção (cruzado com os nomes de camada do Figma):
+| Arquivo | Uso |
+|---|---|
+| logo.png | Logo no header |
+| parte_B.png | Imagem diagonal da seção Home |
+| leticia2.png | Foto da seção Prazer (já tem a arte "Uma nova fase..." embutida) |
+| inspo1.jpg | Card "Sala de Estar — Goiânia, GO" |
+| inspo4.jpg | Card "Sala de Estar — Vilhena, RO" |
+| inspo2.jpg | Card "Cozinha — Cacoal, RO" |
+| inspo3.jpg | Card "Banheiro — São Paulo, SP" |
+| arquiteturaPensada.jpg | Imagem da seção Arquitetura |
+| Image.jpg | Textura de papel usada como fundo |
+
+Ambiente já verificado: Node v22.22.2, npm 10.9.7, git 2.47.1 disponíveis. Pasta local ainda não é repositório git; repositório remoto existe e está vazio.
+
+## Estrutura final do projeto
+
+Projeto/
+├── public/
+│   └── img/                  # imagens usadas no site (movidas de img/)
+├── design-reference/         # Frame 1.png e paleta-de-cores.jpg (não deployado)
+├── src/
+│   ├── main.jsx
+│   ├── App.jsx
+│   ├── index.css             # variáveis de cor, @import Google Fonts, reset básico
+│   ├── constants.js          # WHATSAPP_NUMBER, WHATSAPP_MESSAGE, getWhatsAppLink(), links de Instagram/e-mail
+│   └── components/
+│       ├── Header/           # logo + nav (Projetos / Fale Comigo / Orçamento / Para Arquitetos)
+│       ├── Hero/             # seção Home (headline + imagem diagonal via clip-path)
+│       ├── Prazer/           # bio da Leticia + foto
+│       ├── Projetos/         # grid de 4 cards (projetosData.js com os placeholders do Figma)
+│       ├── Arquitetura/      # texto + imagem "arquiteturaPensada"
+│       └── Footer/           # "Entre em contato" + ícones whatsapp/instagram/e-mail
+├── index.html                # lang="pt-BR", title, meta description, favicon (logo.png), <link> Google Fonts
+├── package.json / vite.config.js
+├── .gitignore                # node_modules, dist, .env
+└── README.md                 # como rodar (npm install / npm run dev / npm run build)
+
+Cada componente usa CSS Module próprio (Nome.module.css) — evita dependência extra (Tailwind/styled-components) e mantém o CSS escopado por seção, fácil de comparar 1:1 com o Figma.
+
+Ícones de WhatsApp/Instagram/e-mail (header social row do Figma e footer) serão extraídos diretamente do Figma (SVG reais do design) em vez de uma lib de ícones genérica, para manter fidelidade visual.
+
+## Passos de execução
+
+1. Scaffold: npm create vite@latest . -- --template react --force na pasta atual (só tem imagens hoje, sem conflito de arquivos de projeto).
+2. Reorganizar assets: mover img/* (exceto paleta-de-cores.jpg) para public/img/; mover Frame 1.png e img/paleta-de-cores.jpg para design-reference/.
+3. Estilos globais: src/index.css com @import das 5 fontes do Google Fonts e variáveis CSS para as 4 cores.
+4. src/constants.js: número do WhatsApp, mensagem padrão, getWhatsAppLink(msg), link do Instagram, e-mail.
+5. Construir os componentes na ordem do frame Website (Header → Hero → Prazer → Projetos → Arquitetura → Footer), usando o texto extraído do Figma e o mapeamento de imagens acima. Buscar os ícones sociais reais do Figma durante essa etapa.
+6. index.html: title, meta description, lang="pt-BR", favicon a partir de logo.png.
+7. README.md: instruções de setup/build.
+8. Git: git init, git checkout -b main (se necessário), git remote add origin https://github.com/JaquelineBravin/Moratta.git, criar .gitignore, primeiro commit. Antes do git push, vou confirmar com você já que é uma ação que afeta o repositório remoto.
+
+## Verificação
+
+- Rodar npm run dev e comparar visualmente cada seção com o screenshot do frame "Website" no Figma.
+- Clicar nos botões "FALE COMIGO", "ORÇAMENTO" e no ícone de WhatsApp do rodapé — todos devem abrir https://wa.me/5569992199752?text=... com a mensagem certa.
+- Conferir os links de Instagram e e-mail no rodapé.
+- Rodar npm run build para garantir que o build de produção (o que futuramente sobe na Hostinger) compila sem erros.
+- Confirmar com você antes do git push inicial para o repositório remoto.

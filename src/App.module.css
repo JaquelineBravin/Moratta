@@ -1,0 +1,7 @@
+.page {
+  width: 1931px;
+  margin: 0 auto;
+  position: relative;
+  background: var(--color-bg);
+  overflow-x: hidden;
+}

@@ -1,0 +1,46 @@
+.arquitetura {
+  position: relative;
+  width: 1931px;
+  height: 1167px;
+  background: var(--color-bg);
+}
+
+.heading {
+  position: absolute;
+  left: 58px;
+  top: 45px;
+  width: 922px;
+  height: 215px;
+  display: flex;
+  align-items: center;
+  font-family: 'Cinzel', serif;
+  font-size: 80px;
+  line-height: 1.1;
+  color: var(--color-accent);
+  text-transform: uppercase;
+}
+
+.image {
+  position: absolute;
+  left: 58px;
+  top: 288px;
+  width: 888px;
+  height: 510px;
+  object-fit: cover;
+}
+
+.text {
+  position: absolute;
+  left: 989px;
+  top: 288px;
+  width: 882px;
+  height: 510px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+  font-family: 'Baskervville SC', serif;
+  font-size: 32px;
+  line-height: 1.4;
+  color: var(--color-secondary);
+}

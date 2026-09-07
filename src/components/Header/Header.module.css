@@ -1,0 +1,50 @@
+.header {
+  position: relative;
+  width: 1931px;
+  height: 127px;
+  background: var(--color-bg);
+  box-shadow: 0 4px 4px 0 rgba(160, 108, 77, 0.25);
+}
+
+.logo {
+  position: absolute;
+  left: 130px;
+  top: 20px;
+  width: 268px;
+  height: 256px;
+  z-index: 5;
+}
+
+.navLink {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 22px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  font-family: 'Cinzel', serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--color-header);
+}
+
+.navProjetos {
+  left: 955px;
+  width: 191px;
+}
+
+.navFaleComigo {
+  left: 1169px;
+  width: 201px;
+}
+
+.navOrcamento {
+  left: 1430px;
+  width: 165px;
+}
+
+.navParaArquitetos {
+  left: 1649px;
+  width: 212px;
+}
