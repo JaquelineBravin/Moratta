@@ -1,6 +1,10 @@
 import { getWhatsAppLink } from '../../constants';
-import logo from '../../img/logo.png';
 import styles from './Header.module.css';
+import { useScrollProgress } from '../../hooks/useScrollProgress';
+
+const colorStart = [243, 238, 233]; // #f3eee9 — estado inicial (topo da página)
+const colorEnd = [175, 154, 141]; // #af9a8d — estado final (após rolar 400px)
+const scrollDistance = 400;
 
 const NAV_ITEMS = [
   { label: 'PROJETOS', href: '#projetos' },
@@ -10,13 +14,11 @@ const NAV_ITEMS = [
 ];
 
 function Header() {
+  const progress = useScrollProgress(scrollDistance); // Hook personalizado para calcular o progresso da rolagem, variando de 0 a 1. O valor de scrollDistance é passado como argumento para determinar a distância máxima de rolagem que influencia o progresso.
+  const headerBackground = interpolateColor(colorStart, colorEnd, progress);
+
   return (
-    <header className={styles.header}>
-      <img
-        src={logo}
-        alt="Moratta — Arquitetura e Interiores"
-        className={styles.logo}
-      />
+    <header className={styles.header} style={{ background: headerBackground }}>
       <nav>
         {NAV_ITEMS.map((item) =>
           item.href ? (
@@ -39,6 +41,16 @@ function Header() {
       </nav>
     </header>
   );
+}
+
+function interpolateColor(colorStart, colorEnd, t) {
+  // T representa o progresso da rolagem, variando de 0 a 1
+  const [r1, g1, b1] = colorStart;
+  const [r2, g2, b2] = colorEnd;
+  const r = Math.round(r1 + (r2 - r1) * t);
+  const g = Math.round(g1 + (g2 - g1) * t);
+  const b = Math.round(b1 + (b2 - b1) * t);
+  return `rgb(${r}, ${g}, ${b})`; // Retorna a cor interpolada no formato RGB
 }
 
 export default Header;

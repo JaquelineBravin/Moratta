@@ -1,9 +1,15 @@
 import styles from './Hero.module.css';
 import parteB from '../../img/parte_B.png';
+import logo from '../../img/logo.png';
 
 function Hero() {
   return (
     <section className={styles.hero}>
+      <img
+        src={logo}
+        alt="Moratta — Arquitetura e Interiores"
+        className={styles.logo}
+      />
       <img src={parteB} alt="" className={styles.image} />
       <h1 className={styles.heading}>
         Arquitetura e Design de Interiores, criando espaços que abraçam, acolhem

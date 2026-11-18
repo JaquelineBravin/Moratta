@@ -1,5 +1,5 @@
-import { projetos } from './projetosData'
-import styles from './Projetos.module.css'
+import { projetos } from './projetosData';
+import styles from './Projetos.module.css';
 
 function Projetos() {
   return (
@@ -20,7 +20,7 @@ function Projetos() {
         ))}
       </div>
     </section>
-  )
+  );
 }
 
-export default Projetos
+export default Projetos;
