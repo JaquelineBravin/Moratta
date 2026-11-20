@@ -2,6 +2,7 @@ import { projetos } from './projetosData';
 import styles from './Projetos.module.css';
 import CarouselModule from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { CardProjeto } from './Card/CardProjeto';
 
 // A lib é CommonJS: dependendo do bundler, o import vem como { default: Componente }.
 const Carousel = CarouselModule.default ?? CarouselModule;
@@ -23,16 +24,7 @@ function Projetos() {
           containerClass={styles.carousel}
         >
           {projetos.map((projeto) => (
-            <article key={projeto.id} className={styles.card}>
-              <img
-                src={projeto.image}
-                alt={`${projeto.room} — ${projeto.city}`}
-                className={styles.cardImage}
-              />
-              <p className={styles.room}>{projeto.room}</p>
-              <p className={styles.city}>{projeto.city}</p>
-              <p className={styles.category}>{projeto.category}</p>
-            </article>
+            <CardProjeto key={projeto.id} projeto={projeto} />
           ))}
         </Carousel>
       </div>

@@ -12,19 +12,20 @@
   font-size: clamp(32px, 2.49vw, 48px);
   color: var(--color-accent);
 }
+/*
+.card:nth-child(4n + 1) {
+  transform-origin: center;
+}
+*/
 
 .grid {
   position: relative;
   max-width: 100%;
 }
 
-/* O carrossel tem overflow: hidden, o que cortava o card ampliado no hover.
-   O padding abre espaço vertical para o scale(1.5); a margem negativa
-   compensa para não alterar o layout. */
 .grid .carousel {
   --hover-room: clamp(60px, 6vw, 120px);
-  padding-top: var(--hover-room);
-  padding-bottom: var(--hover-room);
+  padding: var(--hover-room) 0;
   margin-top: calc(var(--hover-room) * -1);
   margin-bottom: calc(var(--hover-room) * -1);
 }
@@ -36,64 +37,4 @@
 
 .item:hover {
   z-index: 2;
-}
-
-.card:nth-child(4n + 1) {
-  transform-origin: center;
-}
-
-.card {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: auto auto auto;
-  border: 1px solid var(--color-secondary);
-  background: var(--color-bg);
-  transition: transform 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.card:hover {
-  transform: scale(1.5);
-  z-index: 1;
-}
-
-.cardImage {
-  grid-column: 1 / -1;
-  grid-row: 1;
-  width: 100%;
-  aspect-ratio: 422 / 284;
-  object-fit: cover;
-}
-
-.room {
-  grid-column: 1;
-  grid-row: 2;
-  padding: clamp(8px, 1.1vw, 16px) 0 0 clamp(6px, 0.8vw, 11px);
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: clamp(12px, 0.78vw, 15px);
-  color: var(--color-secondary);
-}
-
-.city {
-  grid-column: 1;
-  grid-row: 3;
-  padding: 2px 0 clamp(8px, 1.1vw, 16px) clamp(6px, 0.8vw, 11px);
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: clamp(12px, 0.78vw, 15px);
-  color: var(--color-secondary);
-}
-
-.category {
-  grid-column: 2;
-  grid-row: 2;
-  align-self: start;
-  padding: clamp(8px, 1.1vw, 16px) clamp(6px, 0.8vw, 11px) 0 0;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: clamp(12px, 0.78vw, 15px);
-  color: var(--color-secondary);
-  white-space: nowrap;
 }

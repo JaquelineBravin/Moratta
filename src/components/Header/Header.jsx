@@ -3,7 +3,7 @@ import styles from './Header.module.css';
 import { useScrollProgress } from '../../hooks/useScrollProgress';
 
 const colorStart = [243, 238, 233]; // #f3eee9 — estado inicial (topo da página)
-const colorEnd = [175, 154, 141]; // #af9a8d — estado final (após rolar 400px)
+const colorEnd = [238, 224, 215]; // #af9a8d — estado final (após rolar 400px)
 const scrollDistance = 400;
 
 const NAV_ITEMS = [
