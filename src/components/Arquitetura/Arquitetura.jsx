@@ -12,19 +12,19 @@ function Arquitetura() {
       />
       <div className={styles.text}>
         <p>
-          💡Com a consultoria online, você recebe orientações personalizadas
+          💡Com a consultoria online, você recebe
+          <strong> orientações personalizadas </strong>
           para cada detalhe do seu projeto — seja de interiores, acabamentos ou
           escolhas de layout, tudo com atenção, cuidado e profissionalismo
         </p>
         <p>
-          💡 Interiores à distância:
-          <br />O mesmo cuidado que você teria presencialmente, agora ao alcance
-          de um clique. Projetos pensados para cada necessidade, com soluções
-          criativas e práticas, sem complicação.
+          💡O mesmo cuidado que você teria presencialmente, agora
+          <strong> ao alcance de um clique. </strong>Projetos pensados para cada
+          necessidade, com soluções criativas e práticas, sem complicação.
         </p>
         <p>
           🔑 Porque o seu espaço merece ser pensado com carinho e dedicação,
-          onde quer que você esteja.
+          <strong> onde quer que você esteja.</strong>
         </p>
       </div>
     </section>
