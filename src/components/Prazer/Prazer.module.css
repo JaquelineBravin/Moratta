@@ -48,3 +48,40 @@
   aspect-ratio: 931 / 785;
   object-fit: cover;
 }
+
+@media (max-width: 768px) {
+  .prazer {
+    grid-template-columns: 1fr;
+    padding: 48px 24px;
+    row-gap: 8px;
+  }
+
+  .photo {
+    grid-column: 1;
+    grid-row: 1;
+    margin-bottom: 16px;
+  }
+
+  .greeting,
+  .name,
+  .bio {
+    grid-column: 1;
+  }
+
+  .greeting {
+    grid-row: 2;
+    font-size: 28px;
+  }
+
+  .name {
+    grid-row: 3;
+    font-size: 48px;
+  }
+
+  .bio {
+    grid-row: 4;
+    margin-top: 12px;
+    padding-left: 16px;
+    font-size: 22px;
+  }
+}

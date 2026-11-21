@@ -40,3 +40,32 @@
   line-height: 1.4;
   color: var(--color-secondary);
 }
+
+@media (max-width: 768px) {
+  .arquitetura {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    padding: 32px 24px 56px;
+    row-gap: 20px;
+  }
+
+  .heading,
+  .image,
+  .text {
+    grid-column: 1;
+  }
+
+  .heading {
+    grid-row: 1;
+    font-size: 30px;
+  }
+
+  .image {
+    grid-row: 2;
+  }
+
+  .text {
+    grid-row: 3;
+    font-size: 17px;
+  }
+}
