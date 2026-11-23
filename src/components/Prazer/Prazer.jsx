@@ -1,5 +1,5 @@
 import styles from './Prazer.module.css';
-import leticia from '../../img/leticia2.png';
+import leticia from '../../img/leticiaProfile.jpeg';
 
 function Prazer() {
   return (
